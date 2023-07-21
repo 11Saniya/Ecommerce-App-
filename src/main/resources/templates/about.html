@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home_page E-commerce</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img th:src="@{/images/kaira.png}" src="../static/images/kaira.png" class="logo" alt="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="#" th:href="@{/}">Home</a></li>
+                <li><a href="#" th:href="@{/shop}">Shop</a></li>
+                <li><a href="#" th:href="@{/blog}">Blog</a></li>
+                <li><a class="active" href="#" th:href="@{/about}">About</a></li>
+                <li><a href="#" th:href="@{/contact}">Contact</a></li>
+                <li><a href="#" th:href="@{/login}">SignUp</a> </li>
+                <li id="lg-bag"><a href="#" th:href="@{/cart}" class="logo"><i class="fa fa-shopping-bag"
+                            aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="#" th:href="@{/cart}"><i class="fa fa-shopping-bag"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="page-header" class="about-header">
+        <h2>#KnowUs</h2>
+        <p>Lorem ipsum dolor sit amet, consectur</p>
+    </section>
+
+    <section id="about-head" class="section-p1">
+        <img th:src="@{../images/about/aboutus.webp}" src="../static/images/about/aboutus.webp" alt="">
+        <div>
+            <h2>Who We Are?</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium reiciendis doloremque beatae
+                molestiae ipsum rem quo quibusdam laborum provident. Nemo officia eveniet debitis libero rem minima,
+                neque optio eligendi! Nesciunt.</p>
+            <abbr title="">Create Stunning image as much or as little control as you like thanks to a choice of Basic
+                and Creative modes.</abbr>
+
+            <br><br>
+            <marquee bgcolor="#ccc" loop="-1">
+                scrollamount="5" width="100%" >Create Stunning image as much or as little control as you like thanks to
+                a choice of Basic and Creative modes.</marquee>
+        </div>
+    </section>
+
+    <section id="about-app" class="section-p1">
+        <h1>View Our <a href="#">Website</a> </h1>
+        <div class="video">
+            <video autoplay muted loop th:src="@{../vedio/video1.webm}" src="../static/vedio/video1.webm"></video>
+        </div>
+    </section>
+
+    <section id="feature" class="section-p1">
+        <div class="fe-box">
+            <img th:src="@{../images/offer/shipping.png}" src="../static/images/offer/shipping.png" alt="" width="100px" height="110px">
+            <h6>Free Shipping</h6>
+        </div>
+        <div class="fe-box">
+            <img th:src="@{../images/offer/online_order.png}" src="../static/images/offer/online_order.png" alt="" width="100px" height="110px">
+            <h6>Online Order</h6>
+        </div>
+        <div class="fe-box">
+            <img th:src="@{../images/offer/save_money.jpg}" src="../static/images/offer/save_money.jpg" alt="" width="100px" height="110px">
+            <h6>Save Money</h6>
+        </div>
+        <div class="fe-box">
+            <img th:src="@{../images/offer/promotion.png}" src="../static/images/offer/promotion.png" alt="" width="100px" height="110px">
+            <h6>Promotions</h6>
+        </div>
+        <div class="fe-box">
+            <img th:src="@{../images/offer/happy_sell.png}" src="../static/images/offer/happy_sell.png" alt="" width="100px" height="110px">
+            <h6>Happy Sells</h6>
+        </div>
+        <div class="fe-box">
+            <img th:src="@{../images/offer/24h_support.png}" src="../static/images/offer/24h_support.png" alt="" width="100px" height="110px">
+            <h6>Support</h6>
+        </div>
+
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up for Newsletters</h4>
+            <p>Get E-mail updates our latest shop and <span>special offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <a href="login.html">
+                <button type="button" class="normal">Sign Up
+            </a>
+            </button>
+        </div>
+    </section>
+
+    <footer class="kaira">
+        <div class="col">
+            <img class="logo" th:src="@{/images/kaira.png}" src="../static/images/kaira.png">
+            <div class="cont">
+                <h4>contact</h4>
+                <p><strong>Address:</strong> 433 Wellington Road, Street 32, San Francisco</p>
+                <p><strong>Phone:</strong> +01 2222 234 / (+91) 01 2332 3242</p>
+                <p><strong>Hours:</strong>10:00 - 18:00, Mon - Sat</p>
+                <div class="follow">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <a href="mailto:saniyaanjum142115@gmail.com" target="_blank">
+                            <i class="fa fa-envelope-open "></i>
+                        </a>
+                        <a href="https://www.instagram.com/kaira_designer_store/?hl=en" target="_blank">
+                            <i class="fab fa-instagram "></i>
+                        </a>
+                        <a href="https://www.youtube.com/@JASMINUM" target="_blank">
+                            <i class="fab fa-youtube "></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <!-- <div class="col install">
+      <h4>Install App</h4>
+      <p>From App Store or Google Play</p> 
+      <div class="row">
+        <img src="">
+      </div> 
+      <p>Secured Payment Gateways</p>
+      <img src="">
+    </div>
+
+    <div class="copyright">
+        <p>@ 2023, HTML CSS Ecommerce project</p>
+    </div> -->
+    </footer>
+
+</body>
+
+</html>
