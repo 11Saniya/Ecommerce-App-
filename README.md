@@ -85,7 +85,17 @@ Install Node.js and npm:
 
 Ensure you have Node.js and npm (Node Package Manager) installed on your machine. You can download them from the official Node.js website.
 
-###### Install Dependencies:
+### Install Dependencies: 
+##### Thymeleaf Dependency
+Thymeleaf is a powerful and feature-rich template engine for Java-based web applications. It allows us to create dynamic and data-driven web pages by seamlessly integrating with HTML. In our project, we have leveraged Thymeleaf to efficiently render dynamic content and handle server-side data processing.
+
+To use Thymeleaf in this Spring Boot project, we have added the Thymeleaf dependency to the project's build configuration. This enables automatic configuration of Thymeleaf within the Spring Boot application, allowing us to use Thymeleaf's expressive syntax and features in our HTML templates.
+
+The dependency is specified in the   pom.xml    file for Maven-based projects or build.gradle for Gradle-based projects. Spring Boot's auto-configuration ensures that Thymeleaf is readily available for use, and we can start creating dynamic templates with ease.
+
+Thymeleaf has greatly simplified the process of building dynamic web pages, enabling us to focus on delivering a seamless user experience by rendering data dynamically on the client-side while maintaining clean and readable HTML templates on the server-side.
+
+
 
 Navigate to the frontend project directory and install the required dependencies using npm.
 
