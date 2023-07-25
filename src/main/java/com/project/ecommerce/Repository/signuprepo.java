@@ -6,4 +6,8 @@ import com.project.ecommerce.Model.Signup;
 
 public interface signuprepo extends JpaRepository<Signup, Integer> {
 
+  
+
+    
+    
 }

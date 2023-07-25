@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "signup")
+@Table(name = "stable")
 public class Signup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

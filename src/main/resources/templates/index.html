@@ -9,6 +9,25 @@
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- <script>
+        const bar = document.getElementById('bar');
+        const close = document.getElementById('close');
+        const nav = document.getElementById('navbar');
+
+        if (bar) {
+            bar.addEventListener('click', () => {
+                nav.classList.add('active');
+            })
+        }
+
+        if (close) {
+            close.addEventListener('click', () => {
+                nav.classList.remove('active');
+            })
+        }
+    </script> -->
+
 </head>
 
 <body>
@@ -80,8 +99,10 @@
         <p>Summer Collection New Morden Design</p>
 
         <div class="pro-container">
-            <div class="pro">
-                <img th:src="@{/images/product1/catlog1.jpg}" src="../static/images/product1/catlog1.jpg">
+            <div class="pro" onclick="window.location.href='sproduct.html' ">
+                <a href="#" th:href="@{/sproduct}">
+                    <img th:src="@{/images/product1/catlog1.jpg}" src="../static/images/product1/catlog1.jpg">
+                </a>
                 <div class="des">
                     <h5>Girls top</h5>
                     <div class="star">
@@ -94,15 +115,27 @@
                     <h4>$78</h4>
                 </div>
 
-                <a th:href="@{/Addcart/$450/GirlsTop/1}" href="#">
+                <form action="/Addcart/$78/Girls Top/1" method="post">
+                    <!-- Add any necessary hidden fields for dynamic values -->
+                    <input type="hidden" name="imgurl" value="/images/product1/catlog1.jpg">
+                    <input type="hidden" name="price" value="$78">
+                    <input type="hidden" name="name" value="Girls Top">
+                    <input type="hidden" name="quantity" value="1">
+
+                    <!-- Add to Cart button as a form submission -->
+                    <button type="submit"><i class="fa fa-shopping-cart cart" aria-hidden="true"></i></button>
+                </form>
+
+                <!-- <a th:href="@{/Addcart/$78/GirlsTop/1/src/main/resources/static/images/product1/catlog1.jpg}" href="#">
                     <i class="fa fa-shopping-cart cart" aria-hidden="true">
                     </i>
-                </a>
+                </a> -->
             </div>
 
             <div class="pro">
-                <img th:src="@{../images/product1/catlog2.jpg}" src="../static/images/product1/catlog2.jpg">
-
+                <a href="#" th:href="@{/sproduct}">
+                    <img th:src="@{../images/product1/catlog2.jpg}" src="../static/images/product1/catlog2.jpg">
+                </a>
                 <div class="des">
                     <h5>AJ Dezines Kids Shirt & Shorts Clothing Set For girls in Meesho Mega Blockbuster</h5>
                     <div class="star">
@@ -114,12 +147,25 @@
                     </div>
                     <h4>$58</h4>
                 </div>
-                <a th:href="@{/Addcart/$750/fork/2}" href="#">
-                    <i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a>
+
+
+                <form action="/Addcart/$58/AJ Dezines Kids Shirt & Shorts Clothing Set For girls/1" method="post">
+                    <!-- Add any necessary hidden fields for dynamic values -->
+                    <input type="hidden" name="imgurl" value="/images/product1/catlog2.jpg">
+                    <input type="hidden" name="price" value="$58">
+                    <input type="hidden" name="name" value="AJ Dezines Kids Shirt & Shorts Clothing Set For girls">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit"><i class="fa fa-shopping-cart cart" aria-hidden="true"></i></button>
+                </form>
+                <!-- <a th:href="@{/Addcart/$65/AJ Dezines Kids Shirt & Shorts Clothing Set For girls in Meesho Mega Blockbuster/1}"
+                    href="#">
+                    <i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a> -->
             </div>
 
             <div class="pro">
-                <img th:src="@{../images/product1/catlog3.jpg}" src="../static/images/product1/catlog3.jpg">
+                <a href="#" th:href="@{/sproduct}">
+                    <img th:src="@{/images/product1/catlog3.jpg}" src="../static/images/product1/catlog3.jpg">
+                </a>
                 <div class="des">
                     <h5>Women's long-top</h5>
                     <div class="star">
@@ -131,12 +177,23 @@
                     </div>
                     <h4>$68</h4>
                 </div>
-                <!-- <a th:href="#" href="#"> -->
-                <i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a>
+                <form action="/Addcart/$68/Women's Long-top/1" method="post">
+                    <!-- Add any necessary hidden fields for dynamic values -->
+                    <input type="hidden" name="imgurl" value="/images/product1/catlog3.jpg">
+                    <input type="hidden" name="price" value="$68">
+                    <input type="hidden" name="name" value="Women's Long-top">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit"><i class="fa fa-shopping-cart cart" aria-hidden="true"></i></button>
+                </form>
+
+                <!-- <a th:href="@{/Addcart/$68/Women's-Long-Top/1}" href="#">
+                    <i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a> -->
             </div>
 
             <div class="pro">
-                <img th:src="@{../images/product1/catlog4.jpg}" src="../static/images/product1/catlog4.jpg">
+                <a href="#" th:href="@{/sproduct}">
+                    <img th:src="@{/images/product1/catlog4.jpg}" src="../static/images/product1/catlog4.jpg">
+                </a>
                 <div class="des">
                     <h5>Long Dress </h5>
                     <div class="star">
@@ -148,14 +205,23 @@
                     </div>
                     <h4>$112</h4>
                 </div>
-                <!-- <a th:href="#"> -->
-                <i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a>
+                <form action="/Addcart/$112/Long-Dress/1" method="post">
+                    <input type="hidden" name="imgurl" value="/images/product1/catlog4.jpg">
+                    <input type="hidden" name="price" value="$112">
+                    <input type="hidden" name="name" value="Long Dress">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit"><i class="fa fa-shopping-cart cart" aria-hidden="true"></i></button>
+                </form>
+                <!-- <a th:href="@{/Addcart/$112/Long-Dress/1}" href="#">
+                    <i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a> -->
             </div>
 
             <div class="pro">
-                <img th:src="@{../images/product1/catlog5.jpg}" src="../static/images/product1/catlog5.jpg">
+                <a href="#" th:href="@{/sproduct}">
+                    <img th:src="@{/images/product1/catlog5.jpg}" src="../static/images/product1/catlog5.jpg">
+                </a>
                 <div class="des">
-                    <h5>Women's suit </h5>
+                    <h5>Festive wear Women's suit </h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -163,14 +229,24 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <h4>$68</h4>
+                    <h4>$80</h4>
                 </div>
-                <!-- <a th:href="#"> -->
-                <i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a>
+                <!-- <a th:href="@{/Addcart/$80/Women's-Suit/1}" href="#">
+                    <i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a> -->
+
+                <form action="/Addcart/$80/Festive wear women suit/1" method="post">
+                    <input type="hidden" name="imgurl" value="/images/product1/catlog5.jpg">
+                    <input type="hidden" name="price" value="80">
+                    <input type="hidden" name="name" value="Festive wear women suit">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit"><i class="fa fa-shopping-cart cart" aria-hidden="true"></i></button>
+                </form>
             </div>
 
             <div class="pro">
-                <img th:src="@{../images/product1/catlog6.webp}" src="../static/images/product1/catlog6.webp">
+                <a href="#" th:href="@{/sproduct}">
+                    <img th:src="@{/images/product1/catlog6.webp}" src="../static/images/product1/catlog6.webp">
+                </a>
                 <div class="des">
                     <h5>Cartoon Astronaut men's jacket</h5>
                     <div class="star">
@@ -182,12 +258,21 @@
                     </div>
                     <h4>$78</h4>
                 </div>
-                <!-- <a th:href="#"> -->
-                <i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a>
+                <!-- <a th:href="@{/Addcart/$120/Men's_Jacket/1}" href="#">
+                    <i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a> -->
+                <form action="/Addcart/$78/Cartoon Astronaut men's jacket/1" method="post">
+                    <input type="hidden" name="imgurl" value="/images/product1/catlog6.webp">
+                    <input type="hidden" name="price" value="$78">
+                    <input type="hidden" name="name" value="Long Dress">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit"><i class="fa fa-shopping-cart cart" aria-hidden="true"></i></button>
+                </form>
             </div>
 
             <div class="pro">
-                <img th:src="@{../images/product1/catlog7.jpg}" src="../static/images/product1/catlog7.jpg">
+                <a href="#" th:href="@{/sproduct}">
+                    <img th:src="@{/images/product1/catlog7.jpg}" src="../static/images/product1/catlog7.jpg">
+                </a>
                 <div class="des">
                     <h5>Kaira T-Shirts</h5>
                     <div class="star">
@@ -197,14 +282,24 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <h4>$78</h4>
+                    <h4>$59</h4>
                 </div>
-                <!-- <a th:href="#"> -->
-                <i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a>
+                <!-- <a th:href="@{/Addcart/$59/Kaira_T-shirts/1}" href="#">
+                    <i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a> -->
+
+                <form action="/Addcart/$59/Kaira T-shirts/1" method="post">
+                    <input type="hidden" name="imgurl" value="/images/product1/catlog7.jpg">
+                    <input type="hidden" name="price" value="$59">
+                    <input type="hidden" name="name" value="Kaira T-shirts">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit"><i class="fa fa-shopping-cart cart" aria-hidden="true"></i></button>
+                </form>
             </div>
 
             <div class="pro">
-                <img th:src="@{../images/product1/catlog8.jpg}" src="../static/images/product1/catlog8.jpg">
+                <a href="#" th:href="@{/sproduct}">
+                    <img th:src="@{/images/product1/catlog8.jpg}" src="../static/images/product1/catlog8.jpg">
+                </a>
                 <div class="des">
                     <h5>zara handbag</h5>
                     <div class="star">
@@ -214,18 +309,25 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <h4>$78</h4>
+                    <h4>$280</h4>
                 </div>
-                <!-- <a th:href="#"> -->
-                <i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a>
+                <!-- <a th:href="@{/Addcart/$280/Zara_handbag/1}" href="#">
+                    <i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a> -->
+                <form action="/Addcart/$280/Zara_handbag/1" method="post">
+                    <input type="hidden" name="imgurl" value="/images/product1/catlog8.jpg">
+                    <input type="hidden" name="price" value="$280">
+                    <input type="hidden" name="name" value="Zara_handbag">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit"><i class="fa fa-shopping-cart cart" aria-hidden="true"></i></button>
+                </form>
             </div>
 
-            <div class="pro" onclick="window.location.href='sproduct.html' ">
+            <div class="pro">
                 <a href="#" th:href="@{/sproduct}">
                     <img th:src="@{../images/product1/catlog9.jpg}" src="../static/images/product1/catlog9.jpg">
                 </a>
                 <div class="des">
-                    <h5>Cartoon Astronaut T-Shirts</h5>
+                    <h5>Astronaut Women's top</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -235,62 +337,16 @@
                     </div>
                     <h4>$78</h4>
                 </div>
-                <a href="#"><i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a>
+                <!-- <a href="#"><i class="fa fa-shopping-cart cart" aria-hidden="true"></i></a> -->
+                <form action="/Addcart/$78/Astronaut Women's top/1" method="post">
+                    <input type="hidden" name="imgurl" value="/images/product1/catlog4.jpg">
+                    <input type="hidden" name="price" value="$78">
+                    <input type="hidden" name="name" value="Astronaut Women's top">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit"><i class="fa fa-shopping-cart cart" aria-hidden="true"></i></button>
+                </form>
             </div>
         </div>
-
-        <script>
-            let cartIcon = document.querySelector('cart-icon')
-            let cart = document.querySelector('.cart-box')
-            let closerCart = document.querySelector('close-cart')
-            cartIcon.onclick = () => {
-                cart.classList.add("active");
-            };
-            closerCart.onclick = () => {
-                cart.classList.remove("active");
-            };
-
-            if (document.readyState == 'loading') {
-                document.addEventListener("DOMContentLoaded", ready);
-            } else {
-                ready();
-            }
-
-            // making function
-            function ready() {
-                // remove items
-                var removeCartButtons = document.getElementsByClassName('cart-remove')
-                console.log(removeCartButtons)
-                for (var i = 0; i < removeCartButtons.length; i++) {
-                    var button = removeCartButtons[i];
-                    button.addEventListener('click', removeCartItmes)
-                }
-            }
-
-            // remove items
-            function removeCartItmes(event) {
-                var buttonClicked = event.target
-                buttonClicked.parentElement.remove();
-                updatetotal();
-            }
-
-            // update total
-            function updatetotal() {
-                var cartContent = document.getElementsByClassName('cart-content')[0];
-                var cartBoxes = cartContent.getElementsByClassName("cart-box");
-                var total = 0;
-                for (var i = 0; i < cartBoxes.length; i++) {
-                    var cartBox = cartBoxes[i];
-                    var priceElement = cartBox.getElementsByClassName('cart-price')[0];
-                    var quantityElement = cartBox.getElementsByClassName('cart-quantity')[0];
-                    var price = parseFloat(priceElement.innerText.replace("$", ""));
-                    var quantity = quantityElement.value;
-                    total = total + (price + quantity);
-
-                    document.getElementsByClassName('total-price')[0].innerText = "$" + total;
-                }
-            }
-        </script>
     </section>
 
     <section id="banner" class="section-m1">
@@ -304,7 +360,7 @@
         <h2>New Arrivals </h2>
         <p>Summer Collection New Morden Design</p>
         <div class="pro-container">
-            <div class="pro">
+            <div class="pro" onclick="window.location.href='sproduct.html' ">
                 <img th:src="@{../images/product2/prod1.jpg}" src="../static/images/product2/prod1.jpg">
                 <div class="des">
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -536,7 +592,7 @@
         </div>
     </footer>
 
-    <!-- <script th:src="@{index.js}" ></script> -->
+
 </body>
 
 </html>

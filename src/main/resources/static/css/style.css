@@ -89,6 +89,7 @@ p {
 .section-p1 {
     padding: 40px 80px;
 }
+
 .kaira {
     padding: 40px 80px;
 }
@@ -914,21 +915,21 @@ footer .copyright {
 
 
 /* cart page */
-#cart {
-    overflow-x: auto;
-}
+/* #cart {
+ overflow-x: auto; 
+} */
 
 #cart table {
     width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    white-space: nowrap;
+    text-align: center;
+
 }
 
 #cart table img {
     width: 70px;
 }
 
+/* 
 #cart table td:nth-child(1) {
     width: 100px;
     text-align: center;
@@ -944,6 +945,7 @@ footer .copyright {
     text-align: center;
 }
 
+
 #cart table td:nth-child(4),
 #cart table td:nth-child(5),
 #cart table td:nth-child(6) {
@@ -955,7 +957,7 @@ footer .copyright {
     width: 70px;
     padding: 10px 5px 10px 15px;
 }
-
+*/
 #cart table thead {
     border: 1px solid #e2e9e1;
     border-left: none;
@@ -1038,6 +1040,7 @@ footer .copyright {
     .section-p1 {
         padding: 40px 40px;
     }
+
     .kaira {
         padding: 40px 40px;
     }
@@ -1147,6 +1150,7 @@ footer .copyright {
     .section-p1 {
         padding: 20px;
     }
+
     .kaira {
         padding: 20px;
     }

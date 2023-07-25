@@ -1,5 +1,7 @@
 package com.project.ecommerce.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,45 +9,21 @@ import com.project.ecommerce.Model.Signup;
 import com.project.ecommerce.Repository.signuprepo;
 
 @Service
-public class signservice {
+public class Signservice {
 
     @Autowired
-    static
-    signuprepo repo;
+    signuprepo reposit;
 
-    public Signup Addsign(Signup users) {
-        return repo.save(users);
+    public void Add(Signup user) {
+        reposit.save(user);
     }
 
-    public void Addsig(Signup sign) {
-        repo.save(sign);
+    public List<Signup> findAll() {
+        return reposit.findAll();
     }
 
-    public void check(Signup val) {
-        repo.existsById(val.getId());
+    public List<Signup> Addd(List<Signup> use) {
+        return reposit.findAll();
     }
-
-   
-    // public void addSign(Signup sign) {
-    // repo.save(sign);
-    // }
-
-    // public Signup checkexistence(Signup mail) {
-    // Optional<Signup> existingUser = repo.findById(mail);
-    // if (existingUser.isPresent()) {
-    // return existingUser.get();
-    // } else {
-    // return null;
-    // }
-    // }
-
-    // public boolean authenticateUser(String checkEmail, String checkPassword) {
-    // Optional<Signup> checkingUser = repo.findById(checkPassword);
-    // if (checkingUser.equals(repo.findById(checkEmail))) {
-    // return true;
-    // } else {
-    // return false;
-    // }
-    // }
 
 }

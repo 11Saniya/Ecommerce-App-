@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Add to Cart page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #efefe9;
+            margin-top: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .product-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #ddd;
+            width: 300px;
+            height: 280px;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 15px;
+
+        }
+
+        .product-container:last-child {
+            margin-right: 15px;
+            /* Add margin between columns for the last child */
+        }
+
+        .product-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .product-details {
+            text-align: center;
+        }
+
+        .product-container {
+            position: relative;
+        }
+
+        .shopping-cart-icon {
+            position: absolute;
+            top: -25px;
+            right: 85px;
+            font-size: 24px;
+            color: #007bff;
+
+        }
+
+        /* Cart icon styles */
+        .cart-icon {
+            position: absolute;
+            top: 90%;
+            right: 5px;
+            font-size: 24px;
+            color: #0a0c0e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="header" style="margin-bottom: 10px;">
+        <a href="#"><img th:src="@{/images/kaira.png}" src="../static/images/kaira.png" class="logo" alt="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="#" th:href="@{/admin}">admin-home</a></li>
+                <li><a href="#" th:href="@{/}">Home</a></li>
+                <li><a href="#" th:href="@{/shop}">Shop</a></li>
+                <li><a href="#" th:href="@{/blog}">Blog</a></li>
+                <li><a href="#" th:href="@{/about}">About</a></li>
+                <li><a href="#" th:href="@{/contact}">Contact</a></li>
+                <li><a href="#" th:href="@{/login}">SignUp</a> </li>
+                <li id="lg-bag"><a href="#" th:href="@{/cart}" class="logo "><i class="fa fa-shopping-bag"
+                            aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="#" th:href="@{/cart}"><i class="fa fa-shopping-bag"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <table>
+        <tr>
+            <td>
+                <div class="product-container">
+                    <img src="../static/images/product1/catlog1.jpg" th:src="@{/images/product1/catlog1.jpg}"
+                        alt="Product 1" class="product-image">
+                    <div class="product-details">
+                        <h3>Girl's Top Wear</h3>
+                        <p>Price: $78</p>
+                        <!-- <a th:href="@{/table}" href="#">
+                            <i class="fa fa-shopping-cart cart-icon"></i>
+                        </a> -->
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="product-container">
+                    <img src="../static/images/product1/catlog2.jpg" th:src="@{/images/product1/catlog2.jpg}"
+                        alt="Product 1" class="product-image">
+                    <div class="product-details">
+                        <h3>Kids wear</h3>
+                        <p>Price: $58</p>
+                        <!-- <a th:href="@{/cart/$48/Kids_wear/1}" href="#">
+                            <i class="fa fa-shopping-cart cart-icon"></i>
+                        </a> -->
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="product-container">
+                    <img src="../static/images/product1/catlog3.jpg" th:src="@{/images/product1/catlog3.jpg}"
+                        alt="Product 1" class="product-image">
+                    <div class="product-details">
+                        <h3>Women Long Top</h3>
+                        <p>Price: $68</p>
+                        <!-- <a th:href="@{/cart/$68/women_long_top/1}" href="#">
+                            <i class="fa fa-shopping-cart cart-icon"></i>
+                        </a> -->
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <div class="product-container">
+                    <img src="../static/images/product1/catlog4.jpg" th:src="@{/images/product1/catlog4.jpg}"
+                        alt="Product 1" class="product-image">
+                    <div class="product-details">
+                        <h3>Long Dress</h3>
+                        <p>Price: $112</p>
+                        <!-- <a th:href="@{/cart/$112/Long_Dress/1}" href="#">
+                            <i class="fa fa-shopping-cart cart-icon"></i>
+                        </a> -->
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="product-container">
+                    <img src="../static/images/product1/catlog5.jpg" th:src="@{/images/product1/catlog5.jpg}"
+                        alt="Product 1" class="product-image">
+                    <div class="product-details">
+                        <h3>Festive wear Women Suits</h3>
+                        <p>Price: $80</p>
+                        <!-- <a th:href="@{/cart/$80/Women_suit/1}" href="#">
+                            <i class="fa fa-shopping-cart cart-icon"></i>
+                        </a> -->
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="product-container">
+                    <img src="../static/images/product1/catlog6.webp" th:src="@{/images/product1/catlog6.webp}"
+                        alt="Product 1" class="product-image">
+                    <div class="product-details">
+                        <h3>Astronaut Men's jacket</h3>
+                        <p>Price: $78</p>
+                        <!-- <a th:href="@{/cart/$78/Astronaut_mens_jacket/1}" href="#">
+                            <i class="fa fa-shopping-cart cart-icon"></i>
+                        </a> -->
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <div class="product-container">
+                    <img src="../static/images/product1/catlog7.jpg" th:src="@{/images/product1/catlog7.jpg}"
+                        alt="Product 1" class="product-image">
+                    <div class="product-details">
+                        <h3>Kaira T-shirts</h3>
+                        <p>Price: $58</p>
+                        <!-- <a th:href="@{/cart/$58/Kaira_T-shirts/1}" href="#">
+                            <i class="fa fa-shopping-cart cart-icon"></i>
+                        </a> -->
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="product-container">
+                    <img src="../static/images/product1/catlog8.jpg" th:src="@{/images/product1/catlog8.jpg}"
+                        alt="Product 1" class="product-image">
+                    <div class="product-details">
+                        <h3>Zara handbag</h3>
+                        <p>Price: $280</p>
+                        <!-- <a th:href="@{/cart/$280/Zara_handbag/1}" href="#">
+                            <i class="fa fa-shopping-cart cart-icon"></i>
+                        </a> -->
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="product-container">
+                    <img src="../static/images/product1/catlog9.jpg" th:src="@{/images/product1/catlog9.jpg}"
+                        alt="Product 1" class="product-image">
+                    <div class="product-details">
+                        <h3>Astronaut Women's top</h3>
+                        <p>Price: $78</p>
+                        <!-- <a th:href="@{/cart/$78/Astronaut_Womens_top/1}" href="#">
+                            <i class="fa fa-shopping-cart cart-icon"></i>
+                        </a> -->
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+    </form>
+</body>
+
+</html>

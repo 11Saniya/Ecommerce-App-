@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "cartted")
+@Table(name = "shopcart")
 public class Cartuser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,10 +17,7 @@ public class Cartuser {
     private String price;
     private String quantity;
     private String email;
-
-    public Cartuser() {
-
-    }
+    private String imgurl;
 
     public int getId() {
         return id;
@@ -62,10 +59,18 @@ public class Cartuser {
         this.email = email;
     }
 
+    public String getImgurl() {
+        return imgurl;
+    }
+
+    public void setImgurl(String imgurl) {
+        this.imgurl = imgurl;
+    }
+
     @Override
     public String toString() {
         return "Cartuser [id=" + id + ", productname=" + productname + ", price=" + price + ", quantity=" + quantity
-                + ", email=" + email + "]";
+                + ", email=" + email + ", imgurl=" + imgurl + "]";
     }
 
 }

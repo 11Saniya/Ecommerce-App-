@@ -37,40 +37,37 @@
         <p>Lorem ipsum dolor sit amet, consectur</p>
     </section>
 
-    <section id="cart" class="section-p1">
-
-        <form action="#" th:action="@{/Addcart/{id}/{price}/{productname}/{quantity}}" method="post">
-            <table width="100%">
-                <thead>
+     <section id="cart" class="section-p1">
+        <form action="#" th:action="@{/Addcart/{price}/{productname}/{quantity}}" method="Post">
+            <table style="background-color: rgb(202, 199, 199); margin: 5px; width: 100%;">
+                <thead style="background-color: gray;">
                     <tr>
-                        <td>Remove</td>
                         <td>Image</td>
                         <td>Price</td>
                         <td>Product Name</td>
                         <td>Quantity</td>
+                        <td>Remove</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="t : ${data}"></tr>
-                    <td>
-                        <i class="fa fa-times-circle-o" aria-hidden="true" id="close-cart"></i>
-                         <!-- <a href="#" class="btn btn-danger m-1" th:href="@{/del/{id}(id=${t.id})}"></a> 
-                         <input type="hidden" name="id" th:value="${t.id}">   -->
-                    </td>
-                 
-
-
-                    <td th:text="${price}"></td>
-                    <td th:text="${productname}"></td>
-                    <td th:text="${quantity}"></td>
+                   
+                    <tr th:each="item : ${data}">
+                        <td scope="row">
+                            <img th:src="${item.imgurl}" alt="Image not found" style="max-width: 50px; height: 50px;">
+                        </td>
+                        <td th:text="${item.price}"></td>
+                        <td th:text="${item.productname}"></td>
+                        <td th:text="${item.quantity}"></td>
+                        <td>
+                            <a href="#" th:href="@{/del/{id}(id=${item.id})}" >
+                                <i class="fa fa-times-circle-o" aria-hidden="true" id="close-cart"></i>
+                            </a>
+                        </td>
                     </tr>
-
                 </tbody>
             </table>
         </form>
-
-
-    </section>
+    </section> 
 
 
     <section id="cart-add" class="section-p1">
