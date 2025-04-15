@@ -10,17 +10,19 @@ import jakarta.persistence.Table;
 @Table(name = "feedbacks")
 public class Feedback {
     @Id
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String name;
     private String email;
     private String subject;
     private String Feedback;
 
-    
+    // Add no-args constructor
+    public Feedback() {
 
+    }
+
+    // Your existing constructor
     public Feedback(String feedback) {
         Feedback = feedback;
     }

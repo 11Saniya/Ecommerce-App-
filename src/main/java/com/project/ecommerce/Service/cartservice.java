@@ -40,14 +40,11 @@ public class cartservice {
         List<Cartuser> cartItems = getCartItems(session);
         cartItems.removeIf(item -> item.getId() == id);
         session.setAttribute("cartItems", cartItems);
+        
     }
 
     public Object add(Cartuser cart) {
         return repo.save(cart);
-    }
-
-    public Object findAll() {
-        return repo.findAll();
     }
 
     public void deleteById(Integer id) {
@@ -55,22 +52,24 @@ public class cartservice {
     }
 
     public Cartuser getById(int id) {
-        Optional<Cartuser> table = repo.findById(id);
-        if (table.isPresent()) {
-            return table.get();
-        } else {
-            return null;
-        }
+    Optional<Cartuser> table = repo.findById(id);
+    if (table.isPresent()) {
+    return table.get();
+    } else {
+    return null;
+    }
     }
 
-    public Object findById(int id) {
-        return repo.findById(id);
+    public void findById(int id) {
+        repo.findById(id);
     }
 
-    public Object save(Cartuser cartuse) {
-        return null;
-    }
+    // public Cartuser getById(int id) {
+    //     return repo.findById(id){
+         
+    // }
 
-    public void removeFromCart(int id) {
+    public void deleteById(int id) {
+        repo.deleteById(id);
     }
 }

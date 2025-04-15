@@ -37,8 +37,8 @@
         <p>Lorem ipsum dolor sit amet, consectur</p>
     </section>
 
-     <section id="cart" class="section-p1">
-        <form action="#" th:action="@{/Addcart/{price}/{productname}/{quantity}}" method="Post">
+    <section id="cart" class="section-p1">
+        <form action="#" th:action="@{/Addcart/{price}/{productname}/{quantity}}" method="Post" th:object="${cartItem}">
             <table style="background-color: rgb(202, 199, 199); margin: 5px; width: 100%;">
                 <thead style="background-color: gray;">
                     <tr>
@@ -50,24 +50,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                   
+
                     <tr th:each="item : ${data}">
                         <td scope="row">
-                            <img th:src="${item.imgurl}" alt="Image not found" style="max-width: 50px; height: 50px;">
+                        <!-- <td th:text="${item.id}"></td> -->
+                        <img th:src="${item.imgurl}" alt="Image not found" style="max-width: 50px; height: 50px;">
                         </td>
                         <td th:text="${item.price}"></td>
                         <td th:text="${item.productname}"></td>
                         <td th:text="${item.quantity}"></td>
                         <td>
-                            <a href="#" th:href="@{/del/{id}(id=${item.id})}" >
+
+                            <a href="#" th:href="@{/cart/delete/{id}(id=${item.id})}">
                                 <i class="fa fa-times-circle-o" aria-hidden="true" id="close-cart"></i>
                             </a>
+                            <!-- <input type="hidden" th:field="*{id}" /> -->
                         </td>
                     </tr>
                 </tbody>
             </table>
         </form>
-    </section> 
+    </section>
 
 
     <section id="cart-add" class="section-p1">

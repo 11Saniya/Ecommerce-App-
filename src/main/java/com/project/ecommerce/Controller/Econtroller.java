@@ -142,6 +142,13 @@ public class Econtroller {
         return "redirect:/";
     }
 
+    @GetMapping("/cart")
+    public String showCart(HttpSession session, Model model) {
+        List<Cartuser> cartData = serv.getCartItems(session); // Retrieve cart items specific to the user's session
+        model.addAttribute("data", cartData);
+        return "cart";
+    }
+
     @PostMapping("/Addcart/{price}/{productname}/{quantity}")
     public String addToCart(
             @RequestParam("imgurl") String imgurl,
@@ -161,33 +168,23 @@ public class Econtroller {
         return "redirect:/cart";
     }
 
-    @GetMapping("/cart")
-    public String showCart(@ModelAttribute Cartuser cartuse, HttpSession session,
-            Model model) {
-        List<Cartuser> cartData = serv.getCartItems(session); // Retrieve cart items
-        // specific to the user's session
-        model.addAttribute("data", cartData);
+    // @GetMapping("/del/{id}")
+    // public String del(@PathVariable int id, Model model) {
+    // model.addAttribute("data", serv.getById(id));
+    // serv.deleteById(id);
+    // return "redirect:/cart";
+    // }
 
-        return "cart";
-    }
-
-    @GetMapping("/del/{id}")
+    @GetMapping("/cart/delete/{id}")
     public String deleteCartItem(@PathVariable int id, HttpSession session, Model model) {
-        serv.removeFromCart(id, session); // Remove cart item from the user's session
-        model.addAttribute("data", serv.findById(id));
-        return "redirect:/cart";
-    }
-
-    @GetMapping("/deletedata/{id}")
-    public String del(@PathVariable int id, Model model) {
-        model.addAttribute("data", serv.findById(id));
-        serv.deleteById(id);
+        // model.addAttribute("data", serv.getById(id));
+        serv.removeFromCart(id, session); // Remove cart item from the user's session cart
+        // serv.deleteById(id);
         return "redirect:/cart";
     }
 
     @GetMapping("/signin")
     public String getusers(@ModelAttribute Signup user, Model model) {
-
         serving.Add(user);
         return "redirect:/";
     }
